@@ -1,2 +1,7 @@
 node_modules
 package-lock.json
+*.env
+*.dev
+.DS_Store
+Dockerfile
+docker-compose.yml
