@@ -11,15 +11,9 @@ var model = {
   entityTypes: {
     'UserType': {
       '_id': {'type': 'Edm.String', key: true},
-      'test': {'type': 'Edm.String'},
-      'num': {'type': 'Edm.Int32'},
-      'd': {'type': 'Edm.DateTimeOffset'},
-      'addresses': { 'type': 'Collection(jsreport.AddressType)' }
-    }
-  },
-  complexTypes: {
-    'AddressType': {
-      'street': {'type': 'Edm.String'}
+      'name': {'type': 'Edm.String'},
+      'age': {'type': 'Edm.Int32'},
+      'birthdate': {'type': 'Edm.DateTimeOffset'},
     }
   },
   entitySets: {
