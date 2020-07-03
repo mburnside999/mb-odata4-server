@@ -13,7 +13,7 @@ var model = {
       '_id': {'type': 'Edm.String', key: true},
       'name': {'type': 'Edm.String'},
       'age': {'type': 'Edm.Int32'},
-      'birthdate': {'type': 'Edm.DateTimeOffset'},
+      'birthdate': {'type': 'Edm.DateTimeOffset'}
     }
   },
   entitySets: {
@@ -33,8 +33,8 @@ app.use("/", function (req, res) {
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-db.insert({'_id': '1', 'test': 'a', num: 1, addresses: [{'street': 'a1'}]})
-db.insert({'_id': '2', 'test': 'b', num: 2, addresses: [{'street': 'a2'}]})
-db.insert({'_id': '3', 'test': 'c', num: 3})
-db.insert({'_id': '4', 'test': 'd', num: 4})
-db.insert({'_id': '5', 'test': 'e', num: 5})
+db.insert({'_id': '1', 'name': 'John Smith', age: 40})
+db.insert({'_id': '2', 'name': 'Mary Fogle', age: 41})
+db.insert({'_id': '3', 'name': 'Bob Mackey', age: 30})
+db.insert({'_id': '4', 'name': 'Stacy Cadwell', age: 60})
+db.insert({'_id': '5', 'name': 'Marvin Taylor', age: 62})
