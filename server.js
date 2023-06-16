@@ -4,7 +4,6 @@ var ODataServer = require("simple-odata-server");
 var Adapter = require("simple-odata-server-nedb");
 var Datastore = require("nedb");
 var db = new Datastore({ inMemoryOnly: true });
-var db1 = new Datastore({ inMemoryOnly: true });
 
 const PORT = process.env.PORT || 3000;
 
@@ -57,19 +56,19 @@ db.insert("productaccessory", {
   productstatus: "Available",
 });
 
-db1.insert("productaccessorymilestones", {
+db.insert("productaccessorymilestones", {
   _id: "1",
   productid: "VX1-12-222",
   statusdate: "2020-12-12",
   status: "Alpha",
 });
-db1.insert("productaccessorymilestones", {
+db.insert("productaccessorymilestones", {
   _id: "2",
   productid: "VX1-12-222",
   statusdate: "2021-05-29",
   status: "Beta",
 });
-db1.insert("productaccessorymilestones", {
+db.insert("productaccessorymilestones", {
   _id: "3",
   productid: "VX1-12-222",
   statusdate: "2022-12-12",
