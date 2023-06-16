@@ -56,6 +56,7 @@ db.insert({
   accessoryversion: "1.02",
   product_fkey: "VoltX1",
   athena_fkey: "TX-000101",
+  dynamo_fkey: "785629a73b60a1a1cbfd61b2175818840fa4820-67fb",
   account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
 
@@ -69,6 +70,7 @@ db.insert({
   accessoryversion: "9.0",
   product_fkey: "VoltX1",
   athena_fkey: "TX-000101",
+  dynamo_fkey: "785629a73b60a1a1cbfd61b2175818840fa4820-67fb",
   account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
 
@@ -76,12 +78,13 @@ db.insert({
   _id: "VX1-10-010",
   accessoryname: "VoltX1 - Front Light",
   accessorydescription:
-    "High brilliance comopact front Light. Black, Red, Green, Blue, Chrome",
+    "High brilliance compact front Light. Black, Red, Green, Blue, Chrome",
   accessorystatus: "Available",
   accessoryreleasedate: "2022-06-08",
   accessoryversion: "4.2",
   product_fkey: "VoltX1",
   athena_fkey: "TX-000101",
+  dynamo_fkey: "785629a73b60a1a1cbfd61b2175818840fa4820-67fb",
   account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
 db.insert({
@@ -93,5 +96,6 @@ db.insert({
   accessoryversion: "3.2",
   product_fkey: "VoltX1",
   athena_fkey: "TX-000101",
+  dynamo_fkey: "785629a73b60a1a1cbfd61b2175818840fa4820-67fb",
   account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
