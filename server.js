@@ -17,6 +17,7 @@ var model = {
       productstatus: { type: "Edm.String" },
       productreleasedate: { type: "Edm.Date" },
       productversion: { type: "Edm.String" },
+      athenaexperimental: { type: String },
     },
   },
   entitySets: {
@@ -49,6 +50,7 @@ db.insert({
   productstatus: "Available",
   productreleasedate: "2020-12-12",
   productversion: "1.02",
+  athenaexperimental: "TX-000101",
 });
 
 db.insert({
@@ -58,6 +60,7 @@ db.insert({
   productstatus: "Available",
   productreleasedate: "2023-01-08",
   productversion: "9.0",
+  athenaexperimental: "TX-000101",
 });
 
 db.insert({
@@ -67,6 +70,7 @@ db.insert({
   productstatus: "Available",
   productreleasedate: "2022-06-08",
   productversion: "4.2",
+  athenaexperimental: "TX-000101",
 });
 db.insert({
   _id: "VX1-99-990",
@@ -75,4 +79,5 @@ db.insert({
   productstatus: "Back Order",
   productreleasedate: "2022-06-30",
   productversion: "3.2",
+  athenaexperimental: "TX-000101",
 });
