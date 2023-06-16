@@ -4,6 +4,8 @@ var ODataServer = require("simple-odata-server");
 var Adapter = require("simple-odata-server-nedb");
 var Datastore = require("nedb");
 var db = new Datastore({ inMemoryOnly: true });
+var db1 = new Datastore({ inMemoryOnly: true });
+
 const PORT = process.env.PORT || 3000;
 
 var model = {
@@ -15,11 +17,19 @@ var model = {
       productdescription: { type: "Edm.String" },
       productstatus: { type: "Edm.String" },
     },
+    UserType: {
+      _id: { type: "Edm.String", key: true },
+      name: { type: "Edm.String" }
+      
+    },
   },
   entitySets: {
-    odataproducts: {
+    productaccessory: {
       entityType: "jsreport.ProductAccessoryType",
     },
+    usertypes:{
+      entityType: "jsreport.UserType",
+    }
   },
 };
 
@@ -29,6 +39,10 @@ var odataServer = ODataServer()
     Adapter(function (es, cb) {
       cb(null, db);
     })
+    .adapter(
+      Adapter(function (es, cb) {
+        cb(null, db1);
+      })
   );
 
 app.use("/", function (req, res) {
@@ -66,4 +80,9 @@ db.insert({
   productname: "VoltX1",
   productdescription: "Racing Decal",
   productstatus: "Back Order",
+});
+db1.insert({
+  _id: "User1",
+  name: "Fred",
+  
 });
