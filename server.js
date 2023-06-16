@@ -17,7 +17,7 @@ var model = {
       productstatus: { type: "Edm.String" },
       productreleasedate: { type: "Edm.Date" },
       productversion: { type: "Edm.String" },
-      athenaexperimental: { type: String },
+      athenaexperimental: { type: "Edm.String" },
     },
   },
   entitySets: {
