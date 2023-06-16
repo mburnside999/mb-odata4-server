@@ -17,20 +17,19 @@ var model = {
       productdescription: { type: "Edm.String" },
       productstatus: { type: "Edm.String" },
     },
-    ProductAccessoryMilestonesType: {
-      _id: { type: "Edm.String", key: true },
-      productid: { type: "Edm.String" },
-      statusdate: { type: "Edm.Date" },
-      status: { type: "Edm.String" },
-    },
+    // ProductAccessoryMilestonesType: {
+    //   _id: { type: "Edm.String", key: true },
+    //   productid: { type: "Edm.String" },
+    //   statusdate: { type: "Edm.Date" },
+    //   status: { type: "Edm.String" },
+    // },
   },
   entitySets: {
     productaccessory: {
       entityType: "jsreport.ProductAccessoryType",
     },
-    productaccessorymilestones: {
-      entityType: "jsreport.ProductAccessoryMilestonesType",
-    },
+    // productaccessorymilestones: {
+    //   entityType: "jsreport.ProductAccessoryMilestonesType",
   },
 };
 
@@ -40,11 +39,11 @@ var odataServer = ODataServer()
     Adapter(function (es, cb) {
       cb(null, db);
     })
-  )
-  .adapter(
-    Adapter(function (es, cb) {
-      cb(null, db1);
-    })
+    // )
+    // .adapter(
+    //   Adapter(function (es, cb) {
+    //     cb(null, db1);
+    //   })
   );
 app.use("/", function (req, res) {
   odataServer.handle(req, res);
