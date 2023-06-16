@@ -27,7 +27,7 @@ var model = {
       entityType: "jsreport.UserType",
     },
     odataproducts: {
-      entityType: "jsreport.ProducType",
+      entityType: "jsreport.ProductType",
     },
   },
 };
