@@ -19,7 +19,7 @@ var model = {
     },
     ProductMilestonesType: {
       _id: { type: "Edm.String", key: true },
-      datetime: { type: "Edm.DateTime" },
+      datetime: { type: "Edm.Date" },
       status: { type: "Edm.String" },
     },
   },
@@ -83,6 +83,6 @@ db.insert({
 });
 db1.insert({
   _id: "11",
-  datetime: "2022-12-12T12:00",
+  datetime: "2022-12-12",
   status: "Released",
 });
