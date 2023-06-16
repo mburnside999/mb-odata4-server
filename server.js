@@ -49,11 +49,13 @@ app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //insert product accessories and milestones
 
-db.insert("productaccessory", {
-  _id: "VX1-12-222",
-  productname: "VoltX1",
-  productdescription: "Mobile Phone Holder",
-  productstatus: "Available",
+db.insert({
+  productaccessory: {
+    _id: "VX1-12-222",
+    productname: "VoltX1",
+    productdescription: "Mobile Phone Holder",
+    productstatus: "Available",
+  },
 });
 
 // db.insert("productaccessorymilestones", {
