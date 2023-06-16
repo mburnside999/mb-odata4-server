@@ -10,19 +10,22 @@ const PORT = process.env.PORT || 3000;
 var model = {
   namespace: "jsreport",
   entityTypes: {
-    ProductAccessoryType: {
+    AccessoryType: {
       _id: { type: "Edm.String", key: true },
-      productname: { type: "Edm.String" },
-      productdescription: { type: "Edm.String" },
-      productstatus: { type: "Edm.String" },
-      productreleasedate: { type: "Edm.Date" },
-      productversion: { type: "Edm.String" },
-      athenaexperimental: { type: "Edm.String" },
+      accessoryname: { type: "Edm.String" },
+      accessorydescription: { type: "Edm.String" },
+      accessorystatus: { type: "Edm.String" },
+      accessoryreleasedate: { type: "Edm.Date" },
+      accessoryversion: { type: "Edm.String" },
+      product_fkey: { type: "Edm.String" },
+      athena_fkey: { type: "Edm.String" },
+      dynamo_fkey: { type: "Edm.String" },
+      account_fkey: { type: "Edm.String" },
     },
   },
   entitySets: {
-    productaccessory: {
-      entityType: "jsreport.ProductAccessoryType",
+    ebike_accessory: {
+      entityType: "jsreport.AccessoryType",
     },
   },
 };
@@ -41,43 +44,47 @@ app.use("/", function (req, res) {
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-//insert product accessories and milestones
+//insert accessory accessories and milestones
 
 db.insert({
   _id: "VX1-12-222",
-  productname: "VoltX1",
-  productdescription: "Mobile Phone Holder",
-  productstatus: "Available",
-  productreleasedate: "2020-12-12",
-  productversion: "1.02",
-  athenaexperimental: "TX-000101",
+  accessorydescription: "Mobile Phone Holder",
+  accessorystatus: "Available",
+  accessoryreleasedate: "2020-12-12",
+  accessoryversion: "1.02",
+  product_fkey: "VoltX1",
+  athena_fkey: "TX-000101",
+  account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
 
 db.insert({
   _id: "VX1-10-222",
-  productname: "VoltX1",
-  productdescription: "Pump Bracket",
-  productstatus: "Available",
-  productreleasedate: "2023-01-08",
-  productversion: "9.0",
-  athenaexperimental: "TX-000101",
+  accessorydescription: "Pump Bracket",
+  accessorystatus: "Available",
+  accessoryreleasedate: "2023-01-08",
+  accessoryversion: "9.0",
+  product_fkey: "VoltX1",
+  athena_fkey: "TX-000101",
+  account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
 
 db.insert({
   _id: "VX1-10-010",
-  productname: "VoltX1",
-  productdescription: "Front Light",
-  productstatus: "Available",
-  productreleasedate: "2022-06-08",
-  productversion: "4.2",
-  athenaexperimental: "TX-000101",
+  accessorydescription: "Front Light",
+  accessorystatus: "Available",
+  accessoryreleasedate: "2022-06-08",
+  accessoryversion: "4.2",
+  product_fkey: "VoltX1",
+  athena_fkey: "TX-000101",
+  account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
 db.insert({
   _id: "VX1-99-990",
-  productname: "VoltX1",
-  productdescription: "Racing Decal",
-  productstatus: "Back Order",
-  productreleasedate: "2022-06-30",
-  productversion: "3.2",
-  athenaexperimental: "TX-000102",
+  accessorydescription: "Racing Decal",
+  accessorystatus: "Back Order",
+  accessoryreleasedate: "2022-06-30",
+  accessoryversion: "3.2",
+  product_fkey: "VoltX1",
+  athena_fkey: "TX-000101",
+  account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
