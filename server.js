@@ -17,9 +17,10 @@ var model = {
       productdescription: { type: "Edm.String" },
       productstatus: { type: "Edm.String" },
     },
-    UserType: {
+    ProductMilestones: {
       _id: { type: "Edm.String", key: true },
-      name: { type: "Edm.String" },
+      datetime: { type: "Edm.DateTime" },
+      status: { type: "Edm.String" },
     },
   },
   entitySets: {
@@ -81,6 +82,7 @@ db.insert({
   productstatus: "Back Order",
 });
 db1.insert({
-  _id: "User1",
-  name: "Fred",
+  _id: "11",
+  datetime: "2022-12-12T12:00'",
+  status: "Released",
 });
