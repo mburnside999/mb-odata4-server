@@ -67,18 +67,18 @@ db1.insert({
   statusdate: "2020-12-12",
   status: "Alpha",
 });
-// db1.insert({
-//   _id: "2",
-//   productid: "VX1-12-222",
-//   statusdate: "2021-05-29",
-//   status: "Beta",
-// });
-// db1.insert({
-//   _id: "3",
-//   productid: "VX1-12-222",
-//   statusdate: "2022-12-12",
-//   status: "GA",
-// });
+db1.insert({
+  _id: "2",
+  productid: "VX1-12-222",
+  statusdate: "2021-05-29",
+  status: "Beta",
+});
+db1.insert({
+  _id: "3",
+  productid: "VX1-12-222",
+  statusdate: "2022-12-12",
+  status: "GA",
+});
 
 db.insert({
   _id: "VX1-10-222",
