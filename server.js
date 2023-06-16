@@ -17,7 +17,7 @@ var model = {
       productdescription: { type: "Edm.String" },
       productstatus: { type: "Edm.String" },
     },
-    ProductMilestones: {
+    ProductMilestonesType: {
       _id: { type: "Edm.String", key: true },
       datetime: { type: "Edm.DateTime" },
       status: { type: "Edm.String" },
@@ -27,8 +27,8 @@ var model = {
     productaccessory: {
       entityType: "jsreport.ProductAccessoryType",
     },
-    usertypes: {
-      entityType: "jsreport.UserType",
+    productmilestones: {
+      entityType: "jsreport.ProductMilestonesType",
     },
   },
 };
