@@ -19,17 +19,16 @@ var model = {
     },
     UserType: {
       _id: { type: "Edm.String", key: true },
-      name: { type: "Edm.String" }
-      
+      name: { type: "Edm.String" },
     },
   },
   entitySets: {
     productaccessory: {
       entityType: "jsreport.ProductAccessoryType",
     },
-    usertypes:{
+    usertypes: {
       entityType: "jsreport.UserType",
-    }
+    },
   },
 };
 
@@ -39,12 +38,12 @@ var odataServer = ODataServer()
     Adapter(function (es, cb) {
       cb(null, db);
     })
-    .adapter(
-      Adapter(function (es, cb) {
-        cb(null, db1);
-      })
+  )
+  .adapter(
+    Adapter(function (es, cb) {
+      cb(null, db1);
+    })
   );
-
 app.use("/", function (req, res) {
   odataServer.handle(req, res);
 });
@@ -84,5 +83,4 @@ db.insert({
 db1.insert({
   _id: "User1",
   name: "Fred",
-  
 });
