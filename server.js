@@ -51,7 +51,7 @@ db.insert({
   productversion: "1.02",
 });
 
-db.insert("productaccessory", {
+db.insert({
   _id: "VX1-10-222",
   productname: "VoltX1",
   productdescription: "Pump Bracket",
@@ -60,7 +60,7 @@ db.insert("productaccessory", {
   productversion: "1.02",
 });
 
-db.insert("productaccessory", {
+db.insert({
   _id: "VX1-10-010",
   productname: "VoltX1",
   productdescription: "Front Light",
@@ -68,7 +68,7 @@ db.insert("productaccessory", {
   productreleasedate: "2020-12-12",
   productversion: "1.02",
 });
-db.insert("productaccessory", {
+db.insert({
   _id: "VX1-99-990",
   productname: "VoltX1",
   productdescription: "Racing Decal",
