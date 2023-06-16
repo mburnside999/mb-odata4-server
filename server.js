@@ -42,17 +42,8 @@ var odataServer = ODataServer()
     })
   );
 
-var odataServer1 = ODataServer()
-  .model(model)
-  .adapter(
-    Adapter(function (es, cb) {
-      cb(null, db1);
-    })
-  );
-
 app.use("/", function (req, res) {
   odataServer.handle(req, res);
-  odataServer1.handle(req, res);
 });
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
