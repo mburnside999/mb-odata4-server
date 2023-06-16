@@ -46,8 +46,8 @@ app.use("/", function (req, res) {
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-db.insert({ _id: "1", name: "John Smith", age: 40 });
-db.insert({ _id: "2", name: "Mary Fogle", age: 41 });
-db.insert({ _id: "3", name: "Bob Mackey", age: 30 });
-db.insert({ _id: "4", name: "Stacy Cadwell", age: 60 });
-db.insert({ _id: "5", name: "Marvin Taylor", age: 62 });
+db.insert({ type: "odatausers", _id: "1", name: "John Smith", age: 40 });
+db.insert({ type: "odatausers", _id: "2", name: "Mary Fogle", age: 41 });
+db.insert({ type: "odatausers", _id: "3", name: "Bob Mackey", age: 30 });
+db.insert({ type: "odatausers", _id: "4", name: "Stacy Cadwell", age: 60 });
+db.insert({ type: "odatausers", _id: "5", name: "Marvin Taylor", age: 62 });
