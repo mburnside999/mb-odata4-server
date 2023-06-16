@@ -56,31 +56,31 @@ db.insert("productaccessory", {
   productstatus: "Available",
 });
 
-db.insert("productaccessorymilestones", {
-  _id: "1",
-  productid: "VX1-12-222",
-  statusdate: "2020-12-12",
-  status: "Alpha",
-});
-db.insert("productaccessorymilestones", {
-  _id: "2",
-  productid: "VX1-12-222",
-  statusdate: "2021-05-29",
-  status: "Beta",
-});
-db.insert("productaccessorymilestones", {
-  _id: "3",
-  productid: "VX1-12-222",
-  statusdate: "2022-12-12",
-  status: "GA",
-});
+// db.insert("productaccessorymilestones", {
+//   _id: "1",
+//   productid: "VX1-12-222",
+//   statusdate: "2020-12-12",
+//   status: "Alpha",
+// });
+// db.insert("productaccessorymilestones", {
+//   _id: "2",
+//   productid: "VX1-12-222",
+//   statusdate: "2021-05-29",
+//   status: "Beta",
+// });
+// db.insert("productaccessorymilestones", {
+//   _id: "3",
+//   productid: "VX1-12-222",
+//   statusdate: "2022-12-12",
+//   status: "GA",
+// });
 
-db.insert("productaccessory", {
-  _id: "VX1-10-222",
-  productname: "VoltX1",
-  productdescription: "Pump Bracket",
-  productstatus: "Available",
-});
+// db.insert("productaccessory", {
+//   _id: "VX1-10-222",
+//   productname: "VoltX1",
+//   productdescription: "Pump Bracket",
+//   productstatus: "Available",
+// });
 // db1.insert({
 //   _id: "1",
 //   productid: "VX1-10-222",
@@ -88,12 +88,12 @@ db.insert("productaccessory", {
 //   status: "GA",
 // });
 
-db.insert("productaccessory", {
-  _id: "VX1-10-009",
-  productname: "VoltX1",
-  productdescription: "Rear Light",
-  productstatus: "Available",
-});
+// db.insert("productaccessory", {
+//   _id: "VX1-10-009",
+//   productname: "VoltX1",
+//   productdescription: "Rear Light",
+//   productstatus: "Available",
+// });
 // db1.insert({
 //   _id: "1",
 //   productid: "VX1-10-009",
@@ -101,15 +101,15 @@ db.insert("productaccessory", {
 //   status: "GA",
 // });
 
-db.insert("productaccessory", {
-  _id: "VX1-10-010",
-  productname: "VoltX1",
-  productdescription: "Front Light",
-  productstatus: "Available",
-});
-db.insert("productaccessory", {
-  _id: "VX1-99-990",
-  productname: "VoltX1",
-  productdescription: "Racing Decal",
-  productstatus: "Back Order",
-});
+// db.insert("productaccessory", {
+//   _id: "VX1-10-010",
+//   productname: "VoltX1",
+//   productdescription: "Front Light",
+//   productstatus: "Available",
+// });
+// db.insert("productaccessory", {
+//   _id: "VX1-99-990",
+//   productname: "VoltX1",
+//   productdescription: "Racing Decal",
+//   productstatus: "Back Order",
+// });
