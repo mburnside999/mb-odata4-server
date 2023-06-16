@@ -48,7 +48,9 @@ app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 db.insert({
   _id: "VX1-12-222",
-  accessorydescription: "Mobile Phone Holder",
+  accessoryname: "VoltX1 - Integrated Mobile Phone Holder",
+  accessorydescription:
+    "Mobile Phone Holder to suit the VoltX1 electric bike. Adjustable for all IOS and Android deveices.",
   accessorystatus: "Available",
   accessoryreleasedate: "2020-12-12",
   accessoryversion: "1.02",
@@ -59,7 +61,9 @@ db.insert({
 
 db.insert({
   _id: "VX1-10-222",
-  accessorydescription: "Pump Bracket",
+  accessoryname: "VoltX1 - Compact Pump and Pump Bracket",
+  accessorydescription:
+    "Pump and Pump Bracket for Volt X1. Red, Green, Blue, Black, Chrome.",
   accessorystatus: "Available",
   accessoryreleasedate: "2023-01-08",
   accessoryversion: "9.0",
@@ -70,7 +74,9 @@ db.insert({
 
 db.insert({
   _id: "VX1-10-010",
-  accessorydescription: "Front Light",
+  accessoryname: "VoltX1 - Front Light",
+  accessorydescription:
+    "High brilliance comopact front Light. Black, Red, Green, Blue, Chrome",
   accessorystatus: "Available",
   accessoryreleasedate: "2022-06-08",
   accessoryversion: "4.2",
