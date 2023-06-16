@@ -17,9 +17,10 @@ var model = {
       productdescription: { type: "Edm.String" },
       productstatus: { type: "Edm.String" },
     },
-    ProductMilestonesType: {
+    ProductAccessoryMilestonesType: {
       _id: { type: "Edm.String", key: true },
-      datetime: { type: "Edm.Date" },
+      productid: { type: "Edm.String" },
+      statusdate: { type: "Edm.Date" },
       status: { type: "Edm.String" },
     },
   },
@@ -27,8 +28,8 @@ var model = {
     productaccessory: {
       entityType: "jsreport.ProductAccessoryType",
     },
-    productmilestones: {
-      entityType: "jsreport.ProductMilestonesType",
+    productaccessorymilestones: {
+      entityType: "jsreport.ProductAccessoryMilestonesType",
     },
   },
 };
@@ -51,24 +52,60 @@ app.use("/", function (req, res) {
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
+//insert product accessories and milestones
+
 db.insert({
   _id: "VX1-12-222",
   productname: "VoltX1",
   productdescription: "Mobile Phone Holder",
   productstatus: "Available",
 });
+
+// db1.insert({
+//   _id: "1",
+//   productid: "VX1-12-222",
+//   statusdate: "2020-12-12",
+//   status: "Alpha",
+// });
+// db1.insert({
+//   _id: "2",
+//   productid: "VX1-12-222",
+//   statusdate: "2021-05-29",
+//   status: "Beta",
+// });
+// db1.insert({
+//   _id: "3",
+//   productid: "VX1-12-222",
+//   statusdate: "2022-12-12",
+//   status: "GA",
+// });
+
 db.insert({
   _id: "VX1-10-222",
   productname: "VoltX1",
   productdescription: "Pump Bracket",
   productstatus: "Available",
 });
+// db1.insert({
+//   _id: "1",
+//   productid: "VX1-10-222",
+//   statusdate: "2021-06-18",
+//   status: "GA",
+// });
+
 db.insert({
   _id: "VX1-10-009",
   productname: "VoltX1",
   productdescription: "Rear Light",
   productstatus: "Available",
 });
+// db1.insert({
+//   _id: "1",
+//   productid: "VX1-10-009",
+//   statusdate: "2021-06-18",
+//   status: "GA",
+// });
+
 db.insert({
   _id: "VX1-10-010",
   productname: "VoltX1",
@@ -80,9 +117,4 @@ db.insert({
   productname: "VoltX1",
   productdescription: "Racing Decal",
   productstatus: "Back Order",
-});
-db1.insert({
-  _id: "11",
-  datetime: "2022-12-12",
-  status: "Released",
 });
