@@ -9,13 +9,7 @@ const PORT = process.env.PORT || 3000;
 var model = {
   namespace: "jsreport",
   entityTypes: {
-    UserType: {
-      _id: { type: "Edm.String", key: true },
-      name: { type: "Edm.String" },
-      age: { type: "Edm.Int32" },
-      birthdate: { type: "Edm.DateTimeOffset" },
-    },
-    ProductType: {
+    ProductAccessoryType: {
       _id: { type: "Edm.String", key: true },
       productname: { type: "Edm.String" },
       productdescription: { type: "Edm.String" },
@@ -23,11 +17,8 @@ var model = {
     },
   },
   entitySets: {
-    odatausers: {
-      entityType: "jsreport.UserType",
-    },
     odataproducts: {
-      entityType: "jsreport.ProductType",
+      entityType: "jsreport.ProductAccessoryType",
     },
   },
 };
@@ -46,8 +37,33 @@ app.use("/", function (req, res) {
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-db.insert({ type: "odatausers", _id: "1", name: "John Smith", age: 40 });
-db.insert({ type: "odatausers", _id: "2", name: "Mary Fogle", age: 41 });
-db.insert({ type: "odatausers", _id: "3", name: "Bob Mackey", age: 30 });
-db.insert({ type: "odatausers", _id: "4", name: "Stacy Cadwell", age: 60 });
-db.insert({ type: "odatausers", _id: "5", name: "Marvin Taylor", age: 62 });
+db.insert({
+  _id: "VX1-12-222",
+  productname: "VoltX1",
+  productdescription: "Mobile Phone Holder",
+  productstatus: "Available",
+});
+db.insert({
+  _id: "VX1-10-222",
+  productname: "VoltX1",
+  productdescription: "Pump Bracket",
+  productstatus: "Available",
+});
+db.insert({
+  _id: "VX1-10-009",
+  productname: "VoltX1",
+  productdescription: "Rear Light",
+  productstatus: "Available",
+});
+db.insert({
+  _id: "VX1-10-010",
+  productname: "VoltX1",
+  productdescription: "Front Light",
+  productstatus: "Available",
+});
+db.insert({
+  _id: "VX1-99-990",
+  productname: "VoltX1",
+  productdescription: "Racing Decal",
+  productstatus: "Back Order",
+});
