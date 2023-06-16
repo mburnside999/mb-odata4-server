@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 var model = {
   namespace: "jsreport",
   entityTypes: {
-    AccessoryType: {
+    ebike_accessory: {
       _id: { type: "Edm.String", key: true },
       accessoryname: { type: "Edm.String" },
       accessorydescription: { type: "Edm.String" },
@@ -25,7 +25,7 @@ var model = {
   },
   entitySets: {
     ebike_accessory: {
-      entityType: "jsreport.AccessoryType",
+      entityType: "jsreport.ebike_accessory",
     },
   },
 };
