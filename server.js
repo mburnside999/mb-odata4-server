@@ -86,7 +86,8 @@ db.insert({
 });
 db.insert({
   _id: "VX1-99-990",
-  accessorydescription: "Racing Decal",
+  accessoryname: "VoltX1 - Racing Decal kit",
+  accessorydescription: "Racing decal kit",
   accessorystatus: "Back Order",
   accessoryreleasedate: "2022-06-30",
   accessoryversion: "3.2",
