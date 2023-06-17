@@ -22,10 +22,17 @@ var model = {
       dynamo_fkey: { type: "Edm.String" },
       account_fkey: { type: "Edm.String" },
     },
+    testtype: {
+      _id: { type: "Edm.String", key: true },
+      welcome: { type: "Edm.String" },
+    },
   },
   entitySets: {
     ebike_accessory: {
       entityType: "jsreport.ebike_accessory",
+    },
+    test_entity: {
+      entityType: "jsreport.testtype",
     },
   },
 };
@@ -38,13 +45,30 @@ var odataServer = ODataServer()
     })
   );
 
+var odataServer2 = ODataServer()
+  .model(model)
+  .adapter(
+    Adapter(function (es, cb) {
+      cb(null, db1);
+    })
+  );
+
 app.use("/", function (req, res) {
   odataServer.handle(req, res);
+});
+
+app.use("/odata2", function (req, res) {
+  odataServer2.handle(req, res);
 });
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //insert accessory accessories and milestones
+
+db1.insert({
+  _id: "1",
+  welcome: "Hello world",
+});
 
 db.insert({
   _id: "VX1-12-222",

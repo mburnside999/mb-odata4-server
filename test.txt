@@ -1,0 +1,16 @@
+ https://mb-odata-server-1a0b2252cde0.herokuapp.com/ebike_accessory?&top=51&orderby=accessoryname,_id&count=true&select=_id,accessorydescription,accessoryname,accessoryreleasedate,accessorystatus,accessoryversion,account_fkey,athena_fkey,dynamo_fkey,product_fkey
+
+
+https://mb-odata-server-1a0b2252cde0.herokuapp.com/ebike_accessory?&$top=51&$filter=(accessorystatus eq 'Available')&$orderby=_id&$count=true&$select=_id,accessorydescription,accessoryname,accessoryreleasedate,accessorystatus,accessoryversion,account_fkey,athena_fkey,dynamo_fkey,product_fkey
+
+//related list on account 0012w00001Gz9DEAAZ -- note the externalid substitution
+https://mb-odata-server-1a0b2252cde0.herokuapp.com/ebike_accessory?$top=11&$filter=(account_fkey eq '0012w00001Gz9DEAAZ-extid')&$orderby=_id&$count=true&$select=_id,accessoryname,account_fkey
+
+// my test of an arbitrary filter
+https://mb-odata-server-1a0b2252cde0.herokuapp.com/ebike_accessory?$top=11&$filter=(accessorystatus eq 'Back Order')&$orderby=_id&$count=true&$select=_id,accessorystatus,accessoryname,account_fkey
+
+//A salesforce report with filter "accessorystatus='Available'"
+https://mb-odata-server-1a0b2252cde0.herokuapp.com/ebike_accessory?$top=20000&$filter=(accessorystatus eq 'Available')&$count=true&$select=accessoryversion,account_fkey,athena_fkey,dynamo_fkey,product_fkey
+
+//related list from athena record 'TX-000101'
+https://mb-odata-server-1a0b2252cde0.herokuapp.com/ebike_accessory?%24top=11&$filter=(athena_fkey eq 'TX-000101')&$orderby=_id&$count=true&$select=_id,accessoryname,athena_fkey
