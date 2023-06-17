@@ -23,15 +23,23 @@ var model = {
       dynamo_fkey: { type: "Edm.String" },
       account_fkey: { type: "Edm.String" },
     },
+  },
+  entitySets: {
+    ebike_accessory: {
+      entityType: "jsreport.ebike_accessory",
+    },
+  },
+};
+
+var model2 = {
+  namespace: "jsreport",
+  entityTypes: {
     testtype: {
       _id: { type: "Edm.String", key: true },
       welcome: { type: "Edm.String" },
     },
   },
   entitySets: {
-    ebike_accessory: {
-      entityType: "jsreport.ebike_accessory",
-    },
     test_entity: {
       entityType: "jsreport.testtype",
     },
@@ -47,7 +55,7 @@ var odataServer = ODataServer()
   );
 
 var odataServer2 = ODataServer()
-  .model(model)
+  .model(model2)
   .adapter(
     Adapter(function (es, cb) {
       cb(null, db1);
