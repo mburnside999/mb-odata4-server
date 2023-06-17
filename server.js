@@ -74,7 +74,7 @@ app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //insert accessory accessories and milestones
 
-db1.insert({
+db2.insert({
   _id: "1",
   welcome: "Hello world",
 });
