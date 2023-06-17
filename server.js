@@ -4,7 +4,6 @@ var ODataServer = require("simple-odata-server");
 var Adapter = require("simple-odata-server-nedb");
 var Datastore = require("nedb");
 var db = new Datastore({ inMemoryOnly: true });
-var db2 = new Datastore({ inMemoryOnly: true });
 
 const PORT = process.env.PORT || 3000;
 
@@ -31,21 +30,6 @@ var model = {
   },
 };
 
-var model2 = {
-  namespace: "jsreport2",
-  entityTypes: {
-    testtype: {
-      _id: { type: "Edm.String", key: true },
-      welcome: { type: "Edm.String" },
-    },
-  },
-  entitySets: {
-    test_entity: {
-      entityType: "jsreport2.testtype",
-    },
-  },
-};
-
 var odataServer = ODataServer()
   .model(model)
   .adapter(
@@ -54,20 +38,6 @@ var odataServer = ODataServer()
     })
   );
 
-var odataServer2 = ODataServer()
-  .model(model2)
-  .adapter(
-    Adapter(function (es, cb) {
-      cb(null, db2);
-    })
-  );
-
-app.get("/odata2", function (req, res) {
-  console.log("...odata2");
-  console.log(JSON.stringify(model2));
-  odataServer2.handle(req, res);
-});
-
 app.use("/", function (req, res) {
   odataServer.handle(req, res);
 });
@@ -75,11 +45,6 @@ app.use("/", function (req, res) {
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //insert accessory accessories and milestones
-
-db2.insert({
-  _id: "1",
-  welcome: "Hello world",
-});
 
 db.insert({
   _id: "VX1-12-222",
