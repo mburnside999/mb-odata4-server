@@ -62,13 +62,13 @@ var odataServer2 = ODataServer()
     })
   );
 
-app.use("/", function (req, res) {
-  odataServer.handle(req, res);
-});
-
 app.get("/odata2", function (req, res) {
   console.log("...odata2");
   odataServer2.handle(req, res);
+});
+
+app.use("/", function (req, res) {
+  odataServer.handle(req, res);
 });
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
