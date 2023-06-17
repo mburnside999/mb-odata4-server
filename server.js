@@ -32,7 +32,7 @@ var model = {
 };
 
 var model2 = {
-  namespace: "jsreport",
+  namespace: "jsreport2",
   entityTypes: {
     testtype: {
       _id: { type: "Edm.String", key: true },
