@@ -41,7 +41,7 @@ var model2 = {
   },
   entitySets: {
     test_entity: {
-      entityType: "jsreport.testtype",
+      entityType: "jsreport2.testtype",
     },
   },
 };
