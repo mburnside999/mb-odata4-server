@@ -67,6 +67,7 @@ app.use("/", function (req, res) {
 });
 
 app.use("/odata2", function (req, res) {
+  console.log("...odata2");
   odataServer2.handle(req, res);
 });
 
