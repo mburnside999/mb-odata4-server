@@ -4,7 +4,7 @@ var ODataServer = require("simple-odata-server");
 var Adapter = require("simple-odata-server-nedb");
 var Datastore = require("nedb");
 var db = new Datastore({ inMemoryOnly: true });
-var db1 = new Datastore({ inMemoryOnly: true });
+var db2 = new Datastore({ inMemoryOnly: true });
 
 const PORT = process.env.PORT || 3000;
 
@@ -58,7 +58,7 @@ var odataServer2 = ODataServer()
   .model(model2)
   .adapter(
     Adapter(function (es, cb) {
-      cb(null, db1);
+      cb(null, db2);
     })
   );
 
