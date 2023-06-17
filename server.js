@@ -64,6 +64,7 @@ var odataServer2 = ODataServer()
 
 app.get("/odata2", function (req, res) {
   console.log("...odata2");
+  console.log(JSON.stringify(model2));
   odataServer2.handle(req, res);
 });
 
