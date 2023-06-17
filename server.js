@@ -4,6 +4,7 @@ var ODataServer = require("simple-odata-server");
 var Adapter = require("simple-odata-server-nedb");
 var Datastore = require("nedb");
 var db = new Datastore({ inMemoryOnly: true });
+var db1 = new Datastore({ inMemoryOnly: true });
 
 const PORT = process.env.PORT || 3000;
 
