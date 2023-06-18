@@ -17,10 +17,10 @@ var model = {
       accessorystatus: { type: "Edm.String" },
       accessoryreleasedate: { type: "Edm.Date" },
       accessoryversion: { type: "Edm.String" },
-      product_fkey: { type: "Edm.String" },
-      athena_fkey: { type: "Edm.String" },
-      dynamo_fkey: { type: "Edm.String" },
-      account_fkey: { type: "Edm.String" },
+      product_fkey: { type: "Edm.String" }, //foreign key to custom object Product__c
+      athena_fkey: { type: "Edm.String" }, // foreign key to Athena ebike_sales
+      dynamo_fkey: { type: "Edm.String" }, // foreign key to Dynamo orders
+      account_fkey: { type: "Edm.String" }, // foreign key to standard object Account
     },
   },
   entitySets: {
@@ -38,7 +38,11 @@ var odataServer = ODataServer()
     })
   );
 
-app.use("/", function (req, res) {
+// app.use("/", function (req, res) {
+//   odataServer.handle(req, res);
+// });
+
+app.get("/odata", function (req, res) {
   odataServer.handle(req, res);
 });
 
@@ -47,7 +51,7 @@ app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 //insert accessory accessories and milestones
 
 db.insert({
-  _id: "VX1-12-222",
+  _id: "ACC-VX1-00001",
   accessoryname: "VoltX1 - Integrated Mobile Phone Holder",
   accessorydescription:
     "Mobile Phone Holder to suit the VoltX1 electric bike. Adjustable for all IOS and Android deveices.",
@@ -61,7 +65,7 @@ db.insert({
 });
 
 db.insert({
-  _id: "VX1-10-222",
+  _id: "ACC-VX1-00002",
   accessoryname: "VoltX1 - Compact Pump and Pump Bracket",
   accessorydescription:
     "Pump and Pump Bracket for Volt X1. Red, Green, Blue, Black, Chrome.",
@@ -75,7 +79,7 @@ db.insert({
 });
 
 db.insert({
-  _id: "VX1-10-010",
+  _id: "ACC-VX1-00003",
   accessoryname: "VoltX1 - Front Light",
   accessorydescription:
     "High brilliance compact front Light. Black, Red, Green, Blue, Chrome",
@@ -88,7 +92,7 @@ db.insert({
   account_fkey: "0012w00001Gz9DEAAZ-extid",
 });
 db.insert({
-  _id: "VX1-99-990",
+  _id: "ACC-VX1-00004",
   accessoryname: "VoltX1 - Racing Decal kit",
   accessorydescription: "Racing decal kit",
   accessorystatus: "Back Order",
