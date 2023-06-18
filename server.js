@@ -38,11 +38,7 @@ var odataServer = ODataServer()
     })
   );
 
-// app.use("/", function (req, res) {
-//   odataServer.handle(req, res);
-// });
-
-app.get("/odata", function (req, res) {
+app.use("/", function (req, res) {
   odataServer.handle(req, res);
 });
 
