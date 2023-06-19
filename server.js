@@ -7,6 +7,8 @@ var db = new Datastore({ inMemoryOnly: true });
 
 const PORT = process.env.PORT || 3000;
 
+//custom model for Qantas workshop
+
 var model = {
   namespace: "jsreport",
   entityTypes: {
@@ -17,10 +19,10 @@ var model = {
       accessorystatus: { type: "Edm.String" },
       accessoryreleasedate: { type: "Edm.Date" },
       accessoryversion: { type: "Edm.String" },
-      product_fkey: { type: "Edm.String" }, //foreign key to custom object Product__c
+      product_fkey: { type: "Edm.String" }, //foreign key to salesforce custom object Product__c
       athena_fkey: { type: "Edm.String" }, // foreign key to Athena ebike_sales
       dynamo_fkey: { type: "Edm.String" }, // foreign key to Dynamo orders
-      account_fkey: { type: "Edm.String" }, // foreign key to standard object Account
+      account_fkey: { type: "Edm.String" }, // foreign key to salesforce standard object Account
     },
   },
   entitySets: {
@@ -44,7 +46,7 @@ app.use("/", function (req, res) {
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-//insert accessory accessories and milestones
+//insert records to im-memory database
 
 db.insert({
   _id: "ACC-VX1-00001",
