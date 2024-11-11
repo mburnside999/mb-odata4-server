@@ -5,9 +5,10 @@ var Adapter = require("simple-odata-server-nedb");
 var Datastore = require("nedb");
 var db = new Datastore({ inMemoryOnly: true });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
-//custom model for Qantas workshop
+// A custom ebike-accessory data model for the QANTAS Workshop.
+// ... will be surfaced via Salesforce Connect as an "external" object.
 
 var model = {
   namespace: "jsreport",
@@ -46,7 +47,7 @@ app.use("/", function (req, res) {
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-//insert records to im-memory database
+//insert records to our in-memory ebike_accessory table
 
 db.insert({
   _id: "ACC-VX1-00001",
